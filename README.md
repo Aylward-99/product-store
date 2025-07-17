@@ -39,8 +39,8 @@ A modern, feature-rich e-commerce product management system built with React, Ty
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/product-hub.git
-cd product-hub
+git clone https://github.com/Aylward-99/product-store.git
+cd product-store
 ```
 
 2. Install dependencies:
