@@ -147,6 +147,7 @@ The application will be available at `http://localhost:5000`
 
 This project was transformed from a simple HTML gallery into a full-stack e-commerce platform. See the detailed documentation:
 
+- **[ORIGINAL_PROMPT.md](./ORIGINAL_PROMPT.md)** - The original AI prompt used to create this project
 - **[TRANSFORMATION_GUIDE.md](./TRANSFORMATION_GUIDE.md)** - Complete guide showing the before/after comparison
 - **[Original HTML](./attached_assets/Pasted--DOCTYPE-html-html-lang-en-head-meta-charset-UTF-8-meta-name-viewport-conte-1752750749185_1752750749189.txt)** - The original static HTML gallery
 
