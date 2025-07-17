@@ -249,6 +249,8 @@ export class MemStorage implements IStorage {
     const newProduct: Product = {
       id,
       ...product,
+      originalPrice: product.originalPrice || null,
+      badge: product.badge || null,
       rating: "0",
       reviewCount: 0,
       isFavorite: false,
@@ -287,7 +289,11 @@ export class MemStorage implements IStorage {
 
   async createCategory(category: InsertCategory): Promise<Category> {
     const id = this.currentCategoryId++;
-    const newCategory: Category = { id, ...category };
+    const newCategory: Category = { 
+      id, 
+      ...category, 
+      isActive: category.isActive ?? true 
+    };
     this.categories.set(id, newCategory);
     return newCategory;
   }
@@ -339,13 +345,17 @@ export class MemStorage implements IStorage {
 
     if (existingItem) {
       // Update quantity
-      const updated = { ...existingItem, quantity: existingItem.quantity + cartItem.quantity };
+      const updated = { ...existingItem, quantity: existingItem.quantity + (cartItem.quantity || 1) };
       this.cartItems.set(existingItem.id, updated);
       return updated;
     }
 
     const id = this.currentCartId++;
-    const newItem: CartItem = { id, ...cartItem };
+    const newItem: CartItem = { 
+      id, 
+      ...cartItem, 
+      quantity: cartItem.quantity || 1 
+    };
     this.cartItems.set(id, newItem);
     return newItem;
   }
